@@ -5,4 +5,5 @@ matplotlib             # Visualisation graphique basique
 scipy                  # Outils scientifiques, statistiques avancées
 scikit-learn           # Machine learning classique (régression, clustering, etc.)
 yfinance               # Récupération de données financières (Yahoo Finance)
+plotly
 
