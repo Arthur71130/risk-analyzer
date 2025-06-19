@@ -18,6 +18,14 @@ from datetime import datetime, timedelta
 st.title("Dashboard Portefeuille")
 st.write("Visualisation des investissements")
 
+# Espacement et mise en page
+col1, col2 = st.columns([4, 1])  # 8/1 pour placer à droite
+
+with col2:
+    if st.button("🚪 Se déconnecter"):
+        st.session_state.logged_in = False
+        st.switch_page("app.py")  # retour à la page de login
+
 # --- Données fictives de type marché financier
 date_rng = pd.date_range(datetime.now() - timedelta(days=30), periods=300, freq='H')
 prices = np.cumsum(np.random.randn(len(date_rng))) + 100
@@ -47,10 +55,4 @@ fig.update_layout(
 
 st.plotly_chart(fig, use_container_width=True)
 
-# Espacement et mise en page
-col1, col2 = st.columns([8, 1])  # 8/1 pour placer à droite
 
-with col2:
-    if st.button("🚪 Se déconnecter"):
-        st.session_state.logged_in = False
-        st.switch_page("app.py")  # retour à la page de login
