@@ -9,7 +9,7 @@ yfinance               # Récupération de données financières (Yahoo Finance)
 plotly                 # Visualisations interactives plus poussées
 cvxpy                  # Optimisation convexe (portefeuilles optimisés)
 torch                  # PyTorch, deep learning (si tu fais du DL)
-tensorflow             # TensorFlow, deep learning (alternative à PyTorch)
+#tensorflow             # TensorFlow, deep learning (alternative à PyTorch)
 xgboost                # Modèles de boosting performants pour la prédiction
 lightgbm               # Autre modèle de boosting rapide et efficace
 joblib                 # Sauvegarde/chargement de modèles
