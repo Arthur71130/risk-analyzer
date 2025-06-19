@@ -19,10 +19,10 @@ def login():
 
 # Si pas connecté, on affiche la page de connexion
 if not st.session_state.logged_in:
-    st.title("🔐 Connexion")
+    st.title(" Connexion")
     st.text_input("Nom d'utilisateur", key="username")
     st.text_input("Mot de passe", type="password", key="password")
     st.button("Se connecter", on_click=login)
-    st.stop()  # ⛔ Empêche de charger la suite de l'app
+    st.stop()  #  Empêche de charger la suite de l'app
 else:
-    st.switch_page("pages/1_Portefeuille.py")  # Redirection vers une vraie page
+    st.switch_page("pages/01_Portefeuille.py")  # Redirection vers une vraie page
