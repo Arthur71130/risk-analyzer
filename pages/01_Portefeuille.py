@@ -30,7 +30,7 @@ fig.add_trace(go.Scatter(x=df['Date'], y=df['Price'], mode='lines', name='Prix')
 
 # --- Boutons pour changer d’échelle de temps
 fig.update_layout(
-    title="📈 Évolution du portefeuille",
+    title=" Évolution du portefeuille",
     xaxis=dict(
         rangeselector=dict(
             buttons=list([
