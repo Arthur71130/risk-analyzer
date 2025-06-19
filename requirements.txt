@@ -1,0 +1,18 @@
+streamlit              # Pour créer l'interface web interactive
+pandas                 # Manipulation de données tabulaires (DataFrames)
+numpy                  # Calculs numériques et matrices
+matplotlib             # Visualisation graphique basique
+seaborn                # Visualisation avancée, graphiques stylés
+scipy                  # Outils scientifiques, statistiques avancées
+scikit-learn           # Machine learning classique (régression, clustering, etc.)
+yfinance               # Récupération de données financières (Yahoo Finance)
+plotly                 # Visualisations interactives plus poussées
+cvxpy                  # Optimisation convexe (portefeuilles optimisés)
+torch                  # PyTorch, deep learning (si tu fais du DL)
+tensorflow             # TensorFlow, deep learning (alternative à PyTorch)
+xgboost                # Modèles de boosting performants pour la prédiction
+lightgbm               # Autre modèle de boosting rapide et efficace
+joblib                 # Sauvegarde/chargement de modèles
+requests               # Requêtes HTTP (pour récupérer des données externes)
+beautifulsoup4         # Web scraping (si besoin récupérer données non-API)
+openpyxl               # Lecture/écriture fichiers Excel
