@@ -18,14 +18,15 @@ from datetime import datetime, timedelta
 
 
 # Espacement et mise en page
-col1, col2 = st.columns([4, 1])  # 8/1 pour placer à droite
+col1, col2 = st.columns([4, 1])  # 4/1 pour placer à droite
 
 with col2:
     if st.button("🚪 Se déconnecter"):
         st.session_state.logged_in = False
         st.switch_page("app.py")  # retour à la page de login
 
-st.title("Dashboard Portefeuille")
+with col1
+    st.title("Dashboard Portefeuille")
 st.write("Visualisation des investissements")
 
 # --- Données fictives de type marché financier
