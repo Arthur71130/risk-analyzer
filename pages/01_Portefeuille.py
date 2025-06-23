@@ -25,7 +25,7 @@ with col2:
         st.session_state.logged_in = False
         st.switch_page("app.py")  # retour à la page de login
 
-with col1
+with col1:
     st.title("Dashboard Portefeuille")
 st.write("Visualisation des investissements")
 
