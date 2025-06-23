@@ -21,25 +21,35 @@ st.write("Visualisation des investissements")
 # Bouton pour ajouter un investissement
 if st.button("Ajouter un investissement"):
     with st.expander("Ajouter un nouvel investissement", expanded=True):
-        search_term = st.text_input("Rechercher un titre (ex: NASDAQ:AAPL)")
+        # Liste des marchés boursiers populaires
+        markets = {
+            "NASDAQ:AAPL": "Apple Inc.",
+            "NYSE:MSFT": "Microsoft Corporation",
+            "NASDAQ:GOOGL": "Alphabet Inc.",
+            "NYSE:BRK-A": "Berkshire Hathaway Inc.",
+            "NASDAQ:AMZN": "Amazon.com Inc."
+        }
 
-        if search_term:
+        # Sélection du marché boursier
+        market_choice = st.selectbox("Choisissez un marché boursier", list(markets.keys()), format_func=lambda x: markets[x])
+
+        if market_choice:
             try:
-                # Recherche du titre avec yfinance
-                ticker = yf.Ticker(search_term)
+                # Récupération des informations du marché
+                ticker = yf.Ticker(market_choice)
                 info = ticker.info
                 st.write(f"Nom: {info['shortName']}")
                 st.write(f"Symbole: {info['symbol']}")
                 st.write(f"Prix actuel: {info['currentPrice']}")
 
                 # Ajouter des champs pour saisir des informations supplémentaires
-                quantity = st.number_input("Quantité", min_value=1, value=1)
+                amount = st.number_input("Montant", min_value=0.01, value=100.0, step=0.01)
                 purchase_date = st.date_input("Date d'achat", datetime.today())
 
                 if st.button("Ajouter"):
-                    st.success(f"Investissement ajouté: {quantity} unités de {info['symbol']} à {info['currentPrice']} le {purchase_date}")
+                    st.success(f"Investissement ajouté: {amount} USD de {info['symbol']} à {info['currentPrice']} le {purchase_date}")
             except Exception as e:
-                st.error("Ticker non trouvé ou erreur de recherche.")
+                st.error("Erreur lors de la récupération des informations du marché.")
 
 # --- Données fictives de type marché financier
 date_rng = pd.date_range(datetime.now() - timedelta(days=30), periods=300, freq='H')
